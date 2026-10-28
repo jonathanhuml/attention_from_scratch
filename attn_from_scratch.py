@@ -26,6 +26,8 @@ variance_normalizing = kqv_dim ** -0.5
 # add causal masking
 output = torch.softmax(variance_normalizing* scores, dim=-1) @ QKV[:,2,:]
 
+print(output.shape)
+
 # concatenate heads 
 #torch.Size([2, 256, 128, 32]) ---> torch.Size([256, 128, 64])
 output = output.movedim(0,2).flatten(-2)
