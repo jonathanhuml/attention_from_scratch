@@ -1,5 +1,9 @@
 import torch
 
+"""
+There are multiple bugs here! See if you can spot them...
+"""
+
 class TransformerBlock(torch.nn.Module):
     def __init__(self, d_model, n_heads):
         super().__init__()
